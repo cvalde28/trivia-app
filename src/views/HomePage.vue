@@ -1,15 +1,15 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import BaseTitle from '@/components/BaseTitle.vue'; // Corrected import path
+import { RouterLink } from 'vue-router'
+import BaseTitle from '@/components/BaseTitle.vue';
 import useAPI from '@/composables/useAPI'
 
-const { categories, getCategories } = useAPI()
+const { getCategories } = useAPI()
+const categories = ref([])
 
 onMounted(async () => {
-  await getCategories()
+  categories.value = await getCategories()
 })
-
-
 </script>
 
 <template>
@@ -23,6 +23,4 @@ onMounted(async () => {
       {{ category.name }}
     </RouterLink>
   </div>
-
-  
 </template>

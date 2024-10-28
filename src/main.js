@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
-import Home from './components/Home.vue'; // Adjust the path according to your file structure
+import HomePage from './views/HomePage.vue';
 
 const routes = [
   { path: '/', component: Home }, // Define your routes here
